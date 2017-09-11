@@ -1,0 +1,521 @@
+﻿@model JobApplication.Models.Applicant
+
+@{
+    ViewBag.Title = "Application";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{
+
+    var bankruptcy = new Dictionary<string, string>
+    {
+        { "No", "No" },
+        { "Discharged", "Yes - Discharged" },
+        { "Yes", "Yes - Open" }
+    };
+
+    var yesNo = new Dictionary<string, string>
+    {
+        { "No", "No" },
+        { "Yes", "Yes" }
+    };
+
+
+    var usaStates = new Dictionary<string, string>
+     {
+        { "AL", "Alabama" },
+        { "AK", "Alaska" },
+        { "AS", "American Samoa" },
+        { "AZ", "Arizona" },
+        { "AR", "Arkansas"},
+        { "CA", "California" },
+        { "CO", "Colorado" },
+        { "CT", "Connecticut" },
+        { "DE", "Delaware" },
+        { "DC", "District of Columbia" },
+        { "FM", "Federated States of Miconesia" },
+        { "FL", "Florida" },
+        { "GA", "Georgia" },
+        { "GU", "Guam" },
+        { "HI", "Hawaii" },
+        { "ID", "Idaho" },
+        { "IL", "Illinois" },
+        { "IN", "Indiana" },
+        { "IA", "Iowa" },
+        { "KS", "Kansas" },
+        { "LA", "Lousiana" },
+        { "ME", "Maine" },
+        { "MH", "Marshall Islands" },
+        { "MD", "Maryland" },
+        { "MA", "Massachussets" },
+        { "MI", "Michigan" },
+        { "MN", "Minnesota" },
+        { "MS", "Mississippi" },
+        { "MO", "Missouri" },
+        { "MT", "Montana" },
+        { "NE", "Nebraska" },
+        { "NV", "Nevada" },
+        { "NH", "New Hampshire" },
+        { "NJ", "New Jersey" },
+        { "NM", "New Mexico" },
+        { "NY", "New York" },
+        { "NC", "North Carolina" },
+        { "ND", "North Dakota" },
+        { "MP", "Northern Mariana Islands" },
+        { "OH", "Ohio" },
+        { "OK", "Oklahoma" },
+        { "OR", "Oregon" },
+        { "PW", "Palau" },
+        { "PA", "Pennsylvania" },
+        { "PR", "Puerto Rico" },
+        { "RI", "Rhode Island" },
+        { "SC", "South Carolina" },
+        { "SD", "South Dakota" },
+        { "TN", "Tennessee" },
+        { "TX", "Texas" },
+        { "UT", "Utah" },
+        { "VT", "Vermont" },
+        { "VI", "Virgin Islands" },
+        { "VA", "Virginia" },
+        { "WA", "Washington" },
+        { "WV", "West Virginia" },
+        { "WI", "Wisconsin" },
+        { "WY", "Wyoming" }
+      };
+
+
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div class="jumbotron">
+            <img src="~/Content/UOLogo.jpg" class="img-responsive" />
+        </div>
+        <div id="titleHeading">
+            <h1>Job Application</h1>
+        </div>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Personal Information</div>
+            <div class="panel-body">
+                <div class="section">
+                    <div class="container">
+                        <br />
+                        <h5>Your Information</h5>
+
+                        <div class="col-md-4 required">
+                            @Html.LabelFor(model => model.CEOFirstName, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.CEOFirstName, new { htmlAttributes = new { @class = "form-control", required = "required", id = "ceoFirstName1" } })
+                            @Html.ValidationMessageFor(model => model.CEOFirstName, "This field is required", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="col-md-4">
+                            @Html.LabelFor(model => model.CEOMiddleName, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.CEOMiddleName, new { htmlAttributes = new { @class = "form-control", id = "ceoMiddleName1" } })
+                            @Html.ValidationMessageFor(model => model.CEOMiddleName, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="col-md-4 required">
+                            @Html.LabelFor(model => model.CEOLastName, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.CEOLastName, new { htmlAttributes = new { @class = "form-control", required = "required", id = "ceoLastName1" } })
+                            @Html.ValidationMessageFor(model => model.CEOLastName, "This field is required", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="col-md-4 required">
+                            @Html.LabelFor(model => model.DOB, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.DOB, new { htmlAttributes = new { @class = "form-control", required = "required", id = "partner1BirthDate", @Value = " " } })
+                            @Html.ValidationMessageFor(model => model.DOB, "Please enter a valid date", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="col-md-4 required">
+                            @Html.LabelFor(model => model.SSN, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.SSN, new { htmlAttributes = new { @class = "form-control", required = "required", id = "partner1Soc" } })
+                            @Html.ValidationMessageFor(model => model.SSN, "Please enter a valid Social Security number", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="col-md-4"></div>
+
+                    </div>
+
+                    <div class="section">
+                        <hr />
+                        <div class="container">
+                            <h4>Your Contact Information</h4>
+
+                            <div class="col-md-4">
+                                @Html.LabelFor(model => model.CellPhoneNumber, new { @class = "control-label" })
+                                @Html.EditorFor(model => model.CellPhoneNumber, new { htmlAttributes = new { @class = "form-control", id = "businessCellNum" } })
+                                @Html.ValidationMessageFor(model => model.CellPhoneNumber, "Please enter a valid phone number", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="col-md-4">
+                                @Html.LabelFor(model => model.PersonalWebsite, new { @class = "control-label" })
+                                @Html.EditorFor(model => model.PersonalWebsite, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.PersonalWebsite, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="col-md-4"></div>
+                        </div>
+
+                        <div class="container">
+                            <div class="col-md-12 required">
+                                @Html.LabelFor(model => model.Email, new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                @Html.ValidationMessageFor(model => model.Email, "Please enter a valid email", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="container">
+                            <div class="col-md-12 required">
+                                <label class="control-label">Confirm Email</label>
+                                <div class="inner-addon left-addon">
+                                    <span id="checkBox" class="glyphicon glyphicon-remove"></span>
+                                    <input class="form-control" required="required" type="text" id="EmailConfirmTextBox">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Your Employment History</div>
+            <div class="panel-body">
+
+
+                <div class="section" id="businessOperatingLocation">
+                    <h4>Your Current Employer</h4>
+
+                    <div class="container">
+                        <div class="col-md-12 required">
+                            @Html.LabelFor(model => model.CurrentEmployerName, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.CurrentEmployerName, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.CurrentEmployerName, "This field is required", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="col-md-12 required">
+                            @Html.LabelFor(model => model.CurrentJobTitle, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.CurrentJobTitle, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.CurrentJobTitle, "This field is required", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="col-md-4 required">
+                            @Html.LabelFor(model => model.YearsatEmployer, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.YearsatEmployer, new { htmlAttributes = new { @class = "form-control", @Value = " ", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.YearsatEmployer, "Please enter a valid number", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4"></div>
+                    </div>
+
+                    <div class="container">
+                        <div class="col-md-4  required">
+                            @Html.LabelFor(model => model.EmployerPhoneNumber, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.EmployerPhoneNumber, new { htmlAttributes = new { @class = "form-control", required = "required", id = "businessPhoneNum" } })
+                            @Html.ValidationMessageFor(model => model.EmployerPhoneNumber, "Please enter a valid phone number", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4"></div>
+                    </div>
+
+                    <div class="container">
+                        <div class="col-md-12 required">
+                            @Html.LabelFor(model => model.EmployerAddress, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.EmployerAddress, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.EmployerAddress, "This field is required", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="col-md-4 required">
+                            @Html.LabelFor(model => model.EmployerCity, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.EmployerCity, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.EmployerCity, "This field is required", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="col-md-4 required">
+                            @Html.LabelFor(model => model.EmployerState, new { @class = "control-label" })
+                            <div id="businessOperatingUSA">
+                                @Html.DropDownListFor(m => m.EmployerState, usaStates.Select(d => new SelectListItem { Value = d.Key, Text = d.Value }).ToList(), "-- Please Select --  ", new { @class = "form-control", required = "required" })
+                            </div>
+                            @Html.ValidationMessageFor(model => model.EmployerState, "Please select", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="col-md-4 required">
+                            @Html.LabelFor(model => model.EmployerZipCode, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.EmployerZipCode, new { htmlAttributes = new { @class = "form-control", @Value = " ", required = "required", id = "businessZip" } })
+                            @Html.ValidationMessageFor(model => model.EmployerZipCode, "Please enter a valid zip code", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <hr />
+
+
+                    <div class="container">
+                        <h4>Previous Employment</h4>
+                        <div class="col-md-12 required">
+                            @Html.LabelFor(model => model.Previous1Employer, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.Previous1Employer, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.Previous1Employer, "This field is required", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="container">
+                        <div class="col-md-12 required">
+                            @Html.LabelFor(model => model.Previous1Title, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.Previous1Title, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.Previous1Title, "This field is required", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="col-md-4 required">
+                            @Html.LabelFor(model => model.YearsatPrev1Employer, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.YearsatPrev1Employer, new { htmlAttributes = new { @class = "form-control", @Value = " ", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.YearsatPrev1Employer, "Please enter a valid number", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4"></div>
+                    </div>
+
+                    <div class="container">
+                        <div class="col-md-4  required">
+                            @Html.LabelFor(model => model.Previous1PhoneNumber, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.Previous1PhoneNumber, new { htmlAttributes = new { @class = "form-control", required = "required", id = "businessPhoneNum" } })
+                            @Html.ValidationMessageFor(model => model.Previous1PhoneNumber, "Please enter a valid phone number", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <br />
+                    <br />
+
+
+                    <div class="container">
+                        <div class="col-md-12">
+                            @Html.LabelFor(model => model.Previous2Employer, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.Previous2Employer, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Previous2Employer, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="col-md-12">
+                            @Html.LabelFor(model => model.Previous2Title, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.Previous2Title, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Previous2Title, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="col-md-4">
+                            @Html.LabelFor(model => model.YearsatPrev2Employer, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.YearsatPrev2Employer, new { htmlAttributes = new { @class = "form-control", @Value = " " } })
+                            @Html.ValidationMessageFor(model => model.YearsatPrev2Employer, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4"></div>
+                    </div>
+
+                    <div class="container">
+                        <div class="col-md-4">
+                            @Html.LabelFor(model => model.Previous2PhoneNumber, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.Previous2PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Previous2PhoneNumber, "Please enter a valid phone number", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Background Check</div>
+        <div class="panel-body">
+            <div class="section">
+                <div class="container" id="bankruptcyInformation">
+                    <div class="col-md-4 required" id="bankruptcyCheck">
+                        @Html.LabelFor(model => model.BankruptcyStatus, new { @class = "control-label" })
+                        @Html.DropDownListFor(m => m.BankruptcyStatus, bankruptcy.Select(d => new SelectListItem { Value = d.Key, Text = d.Value }).ToList(), "-- Please Select --  ", new { @class = "form-control", required = "required", id = "bankruptcyCheckDropDown" })
+                        @Html.ValidationMessageFor(model => model.BankruptcyStatus, "Please select", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="container bankruptcyYesSpecifics">
+                    <div class="col-md-4 required">
+                        @Html.LabelFor(model => model.BankruptcyState, new { @class = "control-label" })
+                        @Html.DropDownListFor(m => m.BankruptcyState, usaStates.Select(d => new SelectListItem { Value = d.Key, Text = d.Value }).ToList(), "-- Please Select --  ", new { @class = "form-control", required = "required" })
+                        @Html.ValidationMessageFor(model => model.BankruptcyState, "Please select", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-4 required">
+                        @Html.LabelFor(model => model.BankruptcyCounty, new { @class = "control-label" })
+                        @Html.EditorFor(model => model.BankruptcyCounty, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                        @Html.ValidationMessageFor(model => model.BankruptcyCounty, "This field is required", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="col-md-12 required" id="taxCheck">
+                        @Html.LabelFor(model => model.TaxFlag, new { @class = "control-label" })
+                        @Html.DropDownListFor(m => m.TaxFlag, yesNo.Select(d => new SelectListItem { Value = d.Key, Text = d.Value }).ToList(), "-- Please Select --  ", new { @class = "form-control", required = "required", id = "taxCheckDropDown" })
+                        @Html.ValidationMessageFor(model => model.TaxFlag, "Please select", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="container" id="taxExplanation">
+                    <div class="col-md-12 required">
+                        @Html.LabelFor(model => model.TaxExplanation, new { @class = "control-label" })
+                        @Html.EditorFor(model => model.TaxExplanation, new { htmlAttributes = new { @class = "form-control", required = "required", id = "taxTextBox" } })
+                        @Html.ValidationMessageFor(model => model.TaxExplanation, "This field is required", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="col-md-12 required">
+                        @Html.LabelFor(model => model.CrimeFlag, new { @class = "control-label" })
+                        @Html.DropDownListFor(m => m.CrimeFlag, yesNo.Select(d => new SelectListItem { Value = d.Key, Text = d.Value }).ToList(), "-- Please Select --  ", new { @class = "form-control", required = "required" })
+                        @Html.ValidationMessageFor(model => model.CrimeFlag, "Please select", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="container">
+                <p>I submit this Application to apply for this position. I authorize Company to conduct any personal inquiries concerning this submission as the Company deems necessary to verify the accuracy of information provided to Company. I understand the Company will use the information collected to confirm eligibility for employment.</p>
+            </div>
+
+            <div class="container">
+                <div class="col-md-6 required">
+                    @Html.LabelFor(model => model.PrintedSignatureName, new { @class = "control-label" })
+                    @Html.EditorFor(model => model.PrintedSignatureName, new { htmlAttributes = new { @class = "form-control", required = "required", id = "ceoSignatureFullName" } })
+                    @Html.ValidationMessageFor(model => model.PrintedSignatureName, "This field is required", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-6 required">
+                    @Html.LabelFor(model => model.SignatureDate, new { @class = "control-label" })
+                    @Html.TextBoxFor(model => model.SignatureDate, new { @Value = @DateTime.Now.ToShortDateString(), @class = "form-control", required = "required" })
+                    @Html.ValidationMessageFor(model => model.SignatureDate, "Please enter a valid date", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <br />
+            <br />
+
+            <div class="container form-group">
+                <div class="container">
+                    <div class="col-md-12">
+                        <div class="col">
+                            @Html.LabelFor(model => model.Signature, htmlAttributes: new { @class = "control-label" })
+                            @Html.HiddenFor(model => model.Signature, new { @id = "_sigField" })
+                        </div>
+                        <div class="col" style="background-color:white; ">
+                            <div id="signature" style="background-color:white; width:70%; height:50%; padding: 1px 1px 1px 1px; margin:1px 1px 1px 1px; vertical-align:middle; align-content:center;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="col-md-12">
+                        <div class="col" style="height:30px;">
+                            <input type="button" class="btn btn-primary" value="Save" onclick='return storeSignature("_sigField", "signature", "signImage")' />
+                            <input type="button" class="btn btn-link" value="Reset" onclick='var $sigdiv = $("#signature"); $sigdiv.jSignature("reset"); $("#signImage").attr("src", "");' />
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col">
+                                <img id="signImage" src="@Html.DisplayFor(model => model.Signature)" style="margin:5px 5px 5px 5px; padding: 2px 2px 2px 2px;" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="container" id="submitButtonSection">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 text-center">
+            <input type="submit" value="Submit" class="btn btn-default btn-lg" />
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/MerchantAppjQuery.js")
+    @Scripts.Render("~/bundles/jsignature")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/cssjqryUi")
+    @Scripts.Render("~/Scripts/merchantmaskedinput.js")
+
+    <script type="text/javascript">
+        // initialize the signature pad control
+        $(document).ready(function () {
+            $("#signature").jSignature();
+        })
+        // function to generate the signature image
+        function storeSignature(signFieldName, signPadName, signImageName) {
+            // called when the save button is pressed
+            var $sigdiv = $('#' + signPadName)
+            var datapair = $sigdiv.jSignature("getData", "svgbase64");
+            if (datapair == null) { return false; }
+            var i = new Image();
+            i.src = "data:" + datapair[0] + "," + datapair[1];
+            //$(i).appendTo($('#' + signPadName));
+            $('#' + signFieldName).val(i.src);
+            $('#' + signImageName).attr('src', i.src);
+            return true;
+        }
+        (function ($) {
+            $.QueryString = (function (paramsArray) {
+                let params = {};
+
+                for (let i = 0; i < paramsArray.length; ++i) {
+                    let param = paramsArray[i]
+                        .split('=', 2);
+
+                    if (param.length !== 2)
+                        continue;
+
+                    params[param[0]] = decodeURIComponent(param[1].replace(/\+/g, " "));
+                }
+
+                return params;
+            })(window.location.search.substr(1).split('&'))
+        })(jQuery);
+
+    </script>
+}
+

@@ -1,0 +1,103 @@
+﻿.field-validation-error {
+    color: #ff0000;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.form-group.required .control-label:after {
+    content: " *" !important;
+    color: red !important;
+}
+
+.panel-heading {
+    background-color: #080657 !important;
+    font-family: 'Roboto', sans-serif !important;
+    color: #ffffff !important;
+    letter-spacing: 1.5px;
+}
+
+.form-group, select {
+    font-family: 'Open Sans', sans-serif;
+}
+
+form, select {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#coBuyerQuestion {
+    padding-top: 3px;
+    padding-bottom: 15px;
+    padding-left: 12px;
+}
+
+
+.jumbotron img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.jumbotron {
+    background-color: white;
+    text-align: center;
+    color: #342A7B;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+#loanApplicationTitle {
+    text-align: center;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    padding-bottom:20px;
+}
+
+
+td {
+    text-align: left; /* center checkbox horizontally */
+    vertical-align: middle; /* center checkbox vertically */
+}
+
+th {
+    background-color: #CAD641;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #808080;
+}
+
+input[type=checkbox] {
+    transform: scale(1.4);
+}
+
+dt, dd {
+    font-weight: bold;
+}
+
+.addressBox {
+    max-width: 550px !important;
+}
+
+.commentBox {
+    max-width: 550px !important;
+    height: 150px !important;
+}
+
+#buttonContainer{
+    text-align:center;
+}

@@ -1,0 +1,196 @@
+﻿.field-validation-error {
+    color: #ff0000;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.required .control-label:after {
+    content: " *" !important;
+    color: red !important;
+}
+
+.detailLabel .control-label:after {
+    content: ": " !important;
+    color: black !important;
+}
+
+.needMoneySign .control-label:after {
+    content: ":  $ " !important;
+    color: black !important;
+}
+
+/*Set width on the form input elements since they're 100% wide by default*/
+input,
+select,
+textarea {
+    max-width: 550px !important;
+}
+
+.form-horizontal {
+    padding-top: 40px;
+}
+
+.jumbotron img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+h2 {
+    font-size: 18px;
+    text-align: center;
+    padding-top: 15px;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+h3 {
+    font-size: 18px;
+    color: #342A7B;
+    text-align: center;
+    padding-bottom: 30px;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+h4 {
+    font-size: 16px;
+    color: #342A7B;
+    padding-bottom: 20px;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+h5{
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif !important;
+    color:black;
+    padding-left:14px;
+}
+
+.panel-heading {
+    background-color: #0f0874;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.container {
+    padding-bottom: 5px;
+}
+
+.section {
+    padding-top: 5px;
+}
+
+p, ol, li {
+    line-height: 140%;
+    font-family: Arial;
+    font-size: 14px;
+}
+
+#bankAccountInfoSection {
+    padding-bottom: 25px;
+    padding-top: 30px;
+}
+
+#partner1SignatureSection, #partner2SignatureSection {
+    padding-bottom: 50px;
+}
+
+.btn-default {
+    background-color: #342A7B;
+    color: #ffffff;
+}
+
+    .btn-default:hover {
+        background-color: #CEDA28;
+        color: #ffffff;
+    }
+
+#businessCountry, #businessOrganizationType {
+    max-width: 250px !important;
+}
+
+#termsAndConditions {
+    padding-top: 20px;
+    height: 500px;
+    overflow-y: scroll;
+}
+
+#termsAndConditionsHeading {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#submitButtonSection {
+    padding-top: 50px;
+}
+
+#titleHeading {
+    padding-bottom: 20px;
+}
+
+.ui-datepicker {
+    background-color: white !important;
+    font-size: 16px;
+}
+
+.btn-primary {
+    background-color: #080657;
+}
+
+    .btn-primary:hover {
+        background-color: #CEDA28;
+    }
+
+.btn-link {
+    color: #080657;
+}
+
+    .btn-link:hover {
+        color: #CEDA28;
+    }
+
+
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+  color:#808080;
+}
+
+.glyphicon.glyphicon-ok{
+    color:limegreen;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
