@@ -53,15 +53,17 @@ textarea {
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 96px;
     text-align: center;
     font-family: 'Roboto', sans-serif !important;
+    color:#ff165a;
+    text-shadow: 1px 1px rgba(175, 175, 175, 0.89);
 }
 
 h2 {
     font-size: 18px;
     text-align: center;
-    padding-top: 15px;
+    padding-top: 5px;
     font-family: 'Roboto', sans-serif !important;
 }
 
@@ -75,9 +77,10 @@ h3 {
 
 h4 {
     font-size: 16px;
-    color: #342A7B;
+    color: #FF165A;
     padding-bottom: 20px;
     font-family: 'Roboto', sans-serif !important;
+    text-shadow: 0.2px 0.2px rgba(175, 175, 175, 0.89);
 }
 
 h5{
@@ -88,7 +91,7 @@ h5{
 }
 
 .panel-heading {
-    background-color: #0f0874;
+    background-color: #0049b7;
     color: #ffffff;
     font-size: 16px;
 }
@@ -116,13 +119,17 @@ p, ol, li {
     padding-bottom: 50px;
 }
 
+.btn{
+    border: 0 none;
+}
+
 .btn-default {
-    background-color: #342A7B;
+    background-color: #FF165A;
     color: #ffffff;
 }
 
     .btn-default:hover {
-        background-color: #CEDA28;
+        background-color: rgba(255, 22, 90, 0.82);
         color: #ffffff;
     }
 
@@ -155,19 +162,19 @@ p, ol, li {
 }
 
 .btn-primary {
-    background-color: #080657;
+    background-color: #FF165A;
 }
 
     .btn-primary:hover {
-        background-color: #CEDA28;
+        background-color: rgba(255, 22, 90, 0.82);
     }
 
 .btn-link {
-    color: #080657;
+    color: #FF165A;
 }
 
     .btn-link:hover {
-        color: #CEDA28;
+        color: rgba(255, 22, 90, 0.82);
     }
 
 

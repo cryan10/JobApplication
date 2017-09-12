@@ -148,9 +148,9 @@
                         <div class="container">
                             <h4>Your Contact Information</h4>
 
-                            <div class="col-md-4">
+                            <div class="col-md-4 required">
                                 @Html.LabelFor(model => model.CellPhoneNumber, new { @class = "control-label" })
-                                @Html.EditorFor(model => model.CellPhoneNumber, new { htmlAttributes = new { @class = "form-control", id = "businessCellNum" } })
+                                @Html.EditorFor(model => model.CellPhoneNumber, new { htmlAttributes = new { @class = "form-control", id = "businessCellNum", required = "required" } })
                                 @Html.ValidationMessageFor(model => model.CellPhoneNumber, "Please enter a valid phone number", new { @class = "text-danger" })
                             </div>
 
@@ -324,20 +324,9 @@
 
                     <div class="container">
                         <div class="col-md-4">
-                            @Html.LabelFor(model => model.YearsatPrev2Employer, new { @class = "control-label" })
-                            @Html.EditorFor(model => model.YearsatPrev2Employer, new { htmlAttributes = new { @class = "form-control", @Value = "" } })
-                            @Html.ValidationMessageFor(model => model.YearsatPrev2Employer, "", new { @class = "text-danger" })
-                        </div>
-
-                        <div class="col-md-4"></div>
-                        <div class="col-md-4"></div>
-                    </div>
-
-                    <div class="container">
-                        <div class="col-md-4">
                             @Html.LabelFor(model => model.Previous2PhoneNumber, new { @class = "control-label" })
                             @Html.EditorFor(model => model.Previous2PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => model.Previous2PhoneNumber, "Please enter a valid phone number", new { @class = "text-danger" })
+                            @Html.ValidationMessageFor(model => model.Previous2PhoneNumber, "", new { @class = "text-danger" })
                         </div>
 
                         <div class="col-md-4"></div>
@@ -354,49 +343,27 @@
         <div class="panel-heading">Background Check</div>
         <div class="panel-body">
             <div class="section">
-                <div class="container" id="bankruptcyInformation">
-                    <div class="col-md-4 required" id="bankruptcyCheck">
-                        @Html.LabelFor(model => model.BankruptcyStatus, new { @class = "control-label" })
-                        @Html.DropDownListFor(m => m.BankruptcyStatus, bankruptcy.Select(d => new SelectListItem { Value = d.Key, Text = d.Value }).ToList(), "-- Please Select --  ", new { @class = "form-control", required = "required", id = "bankruptcyCheckDropDown" })
-                        @Html.ValidationMessageFor(model => model.BankruptcyStatus, "Please select", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="container bankruptcyYesSpecifics">
-                    <div class="col-md-4 required">
-                        @Html.LabelFor(model => model.BankruptcyState, new { @class = "control-label" })
-                        @Html.DropDownListFor(m => m.BankruptcyState, usaStates.Select(d => new SelectListItem { Value = d.Key, Text = d.Value }).ToList(), "-- Please Select --  ", new { @class = "form-control", required = "required" })
-                        @Html.ValidationMessageFor(model => model.BankruptcyState, "Please select", new { @class = "text-danger" })
-                    </div>
-
-                    <div class="col-md-4 required">
-                        @Html.LabelFor(model => model.BankruptcyCounty, new { @class = "control-label" })
-                        @Html.EditorFor(model => model.BankruptcyCounty, new { htmlAttributes = new { @class = "form-control", required = "required" } })
-                        @Html.ValidationMessageFor(model => model.BankruptcyCounty, "This field is required", new { @class = "text-danger" })
-                    </div>
-                </div>
 
                 <div class="container">
-                    <div class="col-md-12 required" id="taxCheck">
-                        @Html.LabelFor(model => model.TaxFlag, new { @class = "control-label" })
-                        @Html.DropDownListFor(m => m.TaxFlag, yesNo.Select(d => new SelectListItem { Value = d.Key, Text = d.Value }).ToList(), "-- Please Select --  ", new { @class = "form-control", required = "required", id = "taxCheckDropDown" })
-                        @Html.ValidationMessageFor(model => model.TaxFlag, "Please select", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="container" id="taxExplanation">
-                    <div class="col-md-12 required">
-                        @Html.LabelFor(model => model.TaxExplanation, new { @class = "control-label" })
-                        @Html.EditorFor(model => model.TaxExplanation, new { htmlAttributes = new { @class = "form-control", required = "required", id = "taxTextBox" } })
-                        @Html.ValidationMessageFor(model => model.TaxExplanation, "This field is required", new { @class = "text-danger" })
-                    </div>
-                </div>
-
-                <div class="container">
-                    <div class="col-md-12 required">
+                    <div class="col-md-12 required" id="crimeCheck">
                         @Html.LabelFor(model => model.CrimeFlag, new { @class = "control-label" })
-                        @Html.DropDownListFor(m => m.CrimeFlag, yesNo.Select(d => new SelectListItem { Value = d.Key, Text = d.Value }).ToList(), "-- Please Select --  ", new { @class = "form-control", required = "required" })
+                        @Html.DropDownListFor(m => m.CrimeFlag, yesNo.Select(d => new SelectListItem { Value = d.Key, Text = d.Value }).ToList(), "-- Please Select --  ", new { @class = "form-control", required = "required", id = "crimeCheckDropDown" })
                         @Html.ValidationMessageFor(model => model.CrimeFlag, "Please select", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="container" id="crimeExplanation">
+                    <div class="col-md-12 required">
+                        @Html.LabelFor(model => model.CrimeExplanation, new { @class = "control-label" })
+                        @Html.EditorFor(model => model.CrimeExplanation, new { htmlAttributes = new { @class = "form-control", required = "required", id = "crimeTextBox" } })
+                        @Html.ValidationMessageFor(model => model.CrimeExplanation, "This field is required", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="col-md-12 required" id="crimeCheck">
+                        @Html.LabelFor(model => model.WorkFlag, new { @class = "control-label" })
+                        @Html.DropDownListFor(m => m.WorkFlag, yesNo.Select(d => new SelectListItem { Value = d.Key, Text = d.Value }).ToList(), "-- Please Select --  ", new { @class = "form-control", required = "required", id = "crimeCheckDropDown" })
+                        @Html.ValidationMessageFor(model => model.WorkFlag, "Please select", new { @class = "text-danger" })
                     </div>
                 </div>
 
@@ -463,7 +430,7 @@
     <div class="container" id="submitButtonSection">
         <div class="col-md-4"></div>
         <div class="col-md-4 text-center">
-            <input type="submit" value="Submit" class="btn btn-default btn-lg" />
+            <input type="submit" value="Submit" class="btn btn-default btn-lg"/>
         </div>
         <div class="col-md-4"></div>
     </div>

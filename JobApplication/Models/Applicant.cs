@@ -156,12 +156,12 @@ namespace JobApplication.Models
         public string BankruptcyState { get; set; }
         [Display(Name = "Bankruptcy Status")]
         public string BankruptcyStatus { get; set; } //dropdown list?
-        [Display(Name = "Do you have any outstanding Federal, State or Local taxes?")]
-        public string TaxFlag { get; set; }
-        [Display(Name = "Explain Details: ")]
-        public string TaxExplanation { get; set; }
         [Display(Name = "Have you been convicted of, or pled guilty or no contest to any crime in the last ten (10) years?")]
         public string CrimeFlag { get; set; }
+        [Display(Name = "Explain Details: ")]
+        public string CrimeExplanation { get; set; }
+        [Display(Name = "Are you eligible to work in the United States?")]
+        public string WorkFlag { get; set; }
 
 
     }
