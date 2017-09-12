@@ -47,56 +47,15 @@
         }
     });
 
+    //autofill code feature for signature
 
-    $("#partner1EmailConfirmTextBox").on("keyup", function () {
-        if ($(this).val() == $(Partner1Email).val()) {
-            $("#partner1checkBox").removeClass("glyphicon-remove").addClass("glyphicon-ok");
-        }
-        else {
-            $("#partner1checkBox").removeClass("glyphicon-ok").addClass("glyphicon-remove");
-        }
-    });
+    $("#applicantLastName").on("keyup", function () {
+        var $FirstName = $('#applicantFirstName').val();
+        var $MiddleName = $('#applicantMiddleName').val();
+        var $LastName = $(this).val();
 
-    $(Partner1Email).on("keyup", function () {
-        if ($(this).val() == $("#partner1EmailConfirmTextBox").val()) {
-            $("#partner1checkBox").removeClass("glyphicon-remove").addClass("glyphicon-ok");
-        }
-        else {
-            $("#partner1checkBox").removeClass("glyphicon-ok").addClass("glyphicon-remove");
-        }
-    });
-
-    $("#partner2EmailConfirmTextBox").on("keyup", function () {
-        if ($(this).val() == $(Partner2Email).val()) {
-            $("#partner2checkBox").removeClass("glyphicon-remove").addClass("glyphicon-ok");
-        }
-        else {
-            $("#partner2checkBox").removeClass("glyphicon-ok").addClass("glyphicon-remove");
-        }
-    });
-
-    $(Partner2Email).on("keyup", function () {
-        if ($(this).val() == $("#partner2EmailConfirmTextBox").val()) {
-            $("#partner2checkBox").removeClass("glyphicon-remove").addClass("glyphicon-ok");
-        }
-        else {
-            $("#partner2checkBox").removeClass("glyphicon-ok").addClass("glyphicon-remove");
-        }
-    });
-
-    //autofill code feature for signatures and for titles
-    $("#ceoTitle1").on("keyup", function () {
-        $('#ceoTitle2').val($(this).val());
-    });
-
-
-    $("#ceoLastName1").on("keyup", function () {
-        var $ceoFirstName = $('#ceoFirstName1').val();
-        var $ceoMiddleName = $('#ceoMiddleName1').val();
-        var $ceoLastName = $(this).val();
-
-        var $ceoFullName = $ceoFirstName.concat(" ", $ceoMiddleName, " ", $ceoLastName);
-        $('#ceoSignatureFullName').val($ceoFullName);
-        document.getElementById("ceoSignatureFullName").innerHTML = $ceoFullName;
+        var $FullName = $FirstName.concat(" ", $MiddleName, " ", $LastName);
+        $('#signatureFullName').val($FullName);
+        document.getElementById("signatureFullName").innerHTML = $FullName;
     });
 });

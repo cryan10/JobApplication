@@ -42,3 +42,47 @@ c:\users\cryan\documents\visual studio 2015\Projects\JobApplication\JobApplicati
 c:\users\cryan\documents\visual studio 2015\Projects\JobApplication\JobApplication\obj\Debug\JobApplication.csprojResolveAssemblyReference.cache
 c:\users\cryan\documents\visual studio 2015\Projects\JobApplication\JobApplication\obj\Debug\JobApplication.dll
 c:\users\cryan\documents\visual studio 2015\Projects\JobApplication\JobApplication\obj\Debug\JobApplication.pdb
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\roslyn\csc.exe
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\roslyn\vbc.exe
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\roslyn\VBCSCompiler.exe
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\JobApplication.dll.config
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\JobApplication.dll
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\JobApplication.pdb
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\Antlr3.Runtime.dll
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\EntityFramework.dll
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\EntityFramework.SqlServer.dll
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\Newtonsoft.Json.dll
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\System.Web.Helpers.dll
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\System.Web.Mvc.dll
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\System.Web.Optimization.dll
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\System.Web.Razor.dll
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\System.Web.WebPages.Deployment.dll
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\System.Web.WebPages.dll
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\System.Web.WebPages.Razor.dll
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\WebGrease.dll
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\EntityFramework.xml
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\EntityFramework.SqlServer.xml
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\System.Web.Helpers.xml
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\System.Web.Mvc.xml
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\System.Web.Optimization.xml
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\System.Web.Razor.xml
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\System.Web.WebPages.xml
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\System.Web.WebPages.Deployment.xml
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\System.Web.WebPages.Razor.xml
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\Antlr3.Runtime.pdb
+C:\Users\cryan\Desktop\JobApplication\JobApplication\bin\Newtonsoft.Json.xml
+C:\Users\cryan\Desktop\JobApplication\JobApplication\obj\Debug\JobApplication.csprojResolveAssemblyReference.cache
+C:\Users\cryan\Desktop\JobApplication\JobApplication\obj\Debug\JobApplication.dll
+C:\Users\cryan\Desktop\JobApplication\JobApplication\obj\Debug\JobApplication.pdb

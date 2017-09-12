@@ -12,15 +12,15 @@ namespace JobApplication.Models
         [Required(AllowEmptyStrings = false)]
         [DisplayFormat(ConvertEmptyStringToNull = false)]
         [Display(Name = "First Name")]
-        public string CEOFirstName { get; set; }
+        public string FirstName { get; set; }
 
         [Display(Name = "Middle Name")]
-        public string CEOMiddleName { get; set; }
+        public string MiddleName { get; set; }
 
         [Required(AllowEmptyStrings = false)]
         [DisplayFormat(ConvertEmptyStringToNull = false)]
         [Display(Name = "Last Name")]
-        public string CEOLastName { get; set; }
+        public string LastName { get; set; }
 
         [Required(AllowEmptyStrings = false)]
         [DisplayFormat(ConvertEmptyStringToNull = false)]

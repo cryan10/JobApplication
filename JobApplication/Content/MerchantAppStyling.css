@@ -43,7 +43,7 @@ textarea {
 }
 
 .form-horizontal {
-    padding-top: 40px;
+    padding-top: 140px;
 }
 
 .jumbotron img {
@@ -146,7 +146,7 @@ p, ol, li {
 }
 
 #titleHeading {
-    padding-bottom: 20px;
+    padding-bottom: 40px;
 }
 
 .ui-datepicker {

@@ -93,11 +93,9 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <div class="jumbotron">
-            <img src="~/Content/UOLogo.jpg" class="img-responsive" />
-        </div>
         <div id="titleHeading">
-            <h1>Job Application</h1>
+            <h1>Work With Us!</h1>
+            <h2>Please fill out the information below and take the first step to becoming a part of our team!</h2>
         </div>
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
@@ -107,31 +105,31 @@
                 <div class="section">
                     <div class="container">
                         <br />
-                        <h5>Your Information</h5>
+                        <h4>Your Information</h4>
 
                         <div class="col-md-4 required">
-                            @Html.LabelFor(model => model.CEOFirstName, new { @class = "control-label" })
-                            @Html.EditorFor(model => model.CEOFirstName, new { htmlAttributes = new { @class = "form-control", required = "required", id = "ceoFirstName1" } })
-                            @Html.ValidationMessageFor(model => model.CEOFirstName, "This field is required", new { @class = "text-danger" })
+                            @Html.LabelFor(model => model.FirstName, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", required = "required", id="applicantFirstName" } })
+                            @Html.ValidationMessageFor(model => model.FirstName, "This field is required", new { @class = "text-danger" })
                         </div>
 
                         <div class="col-md-4">
-                            @Html.LabelFor(model => model.CEOMiddleName, new { @class = "control-label" })
-                            @Html.EditorFor(model => model.CEOMiddleName, new { htmlAttributes = new { @class = "form-control", id = "ceoMiddleName1" } })
-                            @Html.ValidationMessageFor(model => model.CEOMiddleName, "", new { @class = "text-danger" })
+                            @Html.LabelFor(model => model.MiddleName, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.MiddleName, new { htmlAttributes = new { @class = "form-control", id="applicantMiddleName" } })
+                            @Html.ValidationMessageFor(model => model.MiddleName, "", new { @class = "text-danger" })
                         </div>
 
                         <div class="col-md-4 required">
-                            @Html.LabelFor(model => model.CEOLastName, new { @class = "control-label" })
-                            @Html.EditorFor(model => model.CEOLastName, new { htmlAttributes = new { @class = "form-control", required = "required", id = "ceoLastName1" } })
-                            @Html.ValidationMessageFor(model => model.CEOLastName, "This field is required", new { @class = "text-danger" })
+                            @Html.LabelFor(model => model.LastName, new { @class = "control-label" })
+                            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", required = "required", id= "applicantLastName" } })
+                            @Html.ValidationMessageFor(model => model.LastName, "This field is required", new { @class = "text-danger" })
                         </div>
                     </div>
 
                     <div class="container">
                         <div class="col-md-4 required">
                             @Html.LabelFor(model => model.DOB, new { @class = "control-label" })
-                            @Html.EditorFor(model => model.DOB, new { htmlAttributes = new { @class = "form-control", required = "required", id = "partner1BirthDate", @Value = " " } })
+                            @Html.EditorFor(model => model.DOB, new { htmlAttributes = new { @class = "form-control", required = "required", id = "partner1BirthDate", @Value = "" } })
                             @Html.ValidationMessageFor(model => model.DOB, "Please enter a valid date", new { @class = "text-danger" })
                         </div>
 
@@ -215,7 +213,7 @@
                     <div class="container">
                         <div class="col-md-4 required">
                             @Html.LabelFor(model => model.YearsatEmployer, new { @class = "control-label" })
-                            @Html.EditorFor(model => model.YearsatEmployer, new { htmlAttributes = new { @class = "form-control", @Value = " ", required = "required" } })
+                            @Html.EditorFor(model => model.YearsatEmployer, new { htmlAttributes = new { @class = "form-control", @Value = "", required = "required" } })
                             @Html.ValidationMessageFor(model => model.YearsatEmployer, "Please enter a valid number", new { @class = "text-danger" })
                         </div>
 
@@ -259,7 +257,7 @@
 
                         <div class="col-md-4 required">
                             @Html.LabelFor(model => model.EmployerZipCode, new { @class = "control-label" })
-                            @Html.EditorFor(model => model.EmployerZipCode, new { htmlAttributes = new { @class = "form-control", @Value = " ", required = "required", id = "businessZip" } })
+                            @Html.EditorFor(model => model.EmployerZipCode, new { htmlAttributes = new { @class = "form-control", @Value = "", required = "required", id = "businessZip" } })
                             @Html.ValidationMessageFor(model => model.EmployerZipCode, "Please enter a valid zip code", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -288,7 +286,7 @@
                     <div class="container">
                         <div class="col-md-4 required">
                             @Html.LabelFor(model => model.YearsatPrev1Employer, new { @class = "control-label" })
-                            @Html.EditorFor(model => model.YearsatPrev1Employer, new { htmlAttributes = new { @class = "form-control", @Value = " ", required = "required" } })
+                            @Html.EditorFor(model => model.YearsatPrev1Employer, new { htmlAttributes = new { @class = "form-control", @Value = "", required = "required" } })
                             @Html.ValidationMessageFor(model => model.YearsatPrev1Employer, "Please enter a valid number", new { @class = "text-danger" })
                         </div>
 
@@ -327,7 +325,7 @@
                     <div class="container">
                         <div class="col-md-4">
                             @Html.LabelFor(model => model.YearsatPrev2Employer, new { @class = "control-label" })
-                            @Html.EditorFor(model => model.YearsatPrev2Employer, new { htmlAttributes = new { @class = "form-control", @Value = " " } })
+                            @Html.EditorFor(model => model.YearsatPrev2Employer, new { htmlAttributes = new { @class = "form-control", @Value = "" } })
                             @Html.ValidationMessageFor(model => model.YearsatPrev2Employer, "", new { @class = "text-danger" })
                         </div>
 
@@ -415,7 +413,7 @@
             <div class="container">
                 <div class="col-md-6 required">
                     @Html.LabelFor(model => model.PrintedSignatureName, new { @class = "control-label" })
-                    @Html.EditorFor(model => model.PrintedSignatureName, new { htmlAttributes = new { @class = "form-control", required = "required", id = "ceoSignatureFullName" } })
+                    @Html.EditorFor(model => model.PrintedSignatureName, new { htmlAttributes = new { @class = "form-control", required = "required", id = "signatureFullName" } })
                     @Html.ValidationMessageFor(model => model.PrintedSignatureName, "This field is required", new { @class = "text-danger" })
                 </div>
 
