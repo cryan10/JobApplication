@@ -201,3 +201,23 @@ p, ol, li {
 /* add padding  */
 .left-addon input  { padding-left:  30px; }
 .right-addon input { padding-right: 30px; }
+
+
+/*Modal styling*/
+.modal-realtitle{
+    font-size: 24px !important;
+}
+
+.modal-subtitle{
+    color: black;
+    text-align:center;
+}
+
+.glyphicon.glyphicon-heart-empty{
+    color: rgba(255, 22, 90, 0.82);
+    font-size:36px;
+    display:block;
+    text-align:center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
